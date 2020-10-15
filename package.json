@@ -1,9 +1,16 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
+  "name": "version-1",
+  "description": "My personal portfolio :)",
+  "version": "1.0.0",
   "license": "0BSD",
+  "author": "AnishShettyK",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Anishshettyk/version_1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -13,17 +20,35 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
   "dependencies": {
     "gatsby": "^2.24.67",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@upstatement/eslint-config": "^0.4.3",
+    "@upstatement/prettier-config": "^0.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
     "prettier": "2.1.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
