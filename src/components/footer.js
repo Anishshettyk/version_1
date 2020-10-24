@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconLogo, ReactIcon, GatsbyIcon } from '@components/Icons';
+import { IconLogo, ReactIcon, GatsbyIcon } from '@components/icons';
 
 const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixin.flex_column}

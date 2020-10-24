@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { scrollDirectionUse } from '@hooks';
-import { IconLogo } from '@components/Icons';
+import { IconLogo } from '@components/icons';
 import { Links } from '../stableData/data_web';
 
 const HeaderStyled = styled.header`
