@@ -1,5 +1,11 @@
-import React from "react"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Layout } from '@components';
 
-export default function Home() {
-  return <div>Hello world!</div>
-}
+const IndexPage = ({ location }) => <Layout location={location}>hello</Layout>;
+
+IndexPage.propTypes = {
+  location: PropTypes.object.isRequired,
+};
+
+export default IndexPage;
