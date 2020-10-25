@@ -11,6 +11,15 @@ const StyledSideElement = styled.div`
   right: ${props => (props.orientation === 'left' ? 'auto' : '30px')};
   z-index: 10;
   color: var(--blue);
+
+  @media (max-width: 1080px) {
+    left: ${props => (props.orientation === 'left' ? '10px' : 'auto')};
+    right: ${props => (props.orientation === 'right' ? 'auto' : '10px')};
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Fixed = ({ home, orientation, children }) => {

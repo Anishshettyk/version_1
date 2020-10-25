@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconLogo, ReactIcon, GatsbyIcon } from '@components/icons';
+import { IconLogo, ReactIcon, GatsbyIcon, Icon } from '@components/icons';
+import { SocialMedia } from './../stableData/data_web';
 
 const StyledFooter = styled.footer`
-  ${({ theme }) => theme.mixin.flex_column}
-  position: absolute;
   min-height: 10vh;
   width: 100%;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
+  height: 100%;
+  padding: 20px;
   background: var(--black); /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -23,119 +21,120 @@ const StyledFooter = styled.footer`
     var(--navy),
     var(--black)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+`;
+const StyledRelativeFooter = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  ${({ theme }) => theme.mixin.flex_center}
 
-  &:before {
-    position: absolute;
-    content: 'Anish';
-    top: 0;
-    left: -100px;
-    opacity: 0.1;
-    transform: rotate(-90deg);
-    font-size: var(--fs-heavy);
-    color: var(--line-color);
-    font-weight: 900;
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-  &:after {
-    position: absolute;
-    content: 'Shetty';
-    top: 90px;
-    right: -100px;
-    opacity: 0.1;
-    transform: rotate(-270deg);
-    font-size: var(--fs-heavy);
-    color: var(--line-color);
-    font-weight: 900;
-    @media (max-width: 768px) {
-      display: none;
-    }
+  @media (max-width:768px) {
+    ${({ theme }) => theme.mixin.flex_column}
   }
 `;
+const SocialContainer = styled.div`
+  width: 50%;
+  ${({ theme }) => theme.mixin.flex_center}
 
-const FooterContent = styled.div`
-  max-width: 80%;
-  ${({ theme }) => theme.mixin.flex_column}
-
-  .main-content {
+  ul {
+    position: relative;
     ${({ theme }) => theme.mixin.flex_center}
 
-    svg {
-      margin-top: 10px;
-      display: inline-block;
-      width: 100px;
-    }
+    li {
+      margin: 10px;
 
-    h2 {
-      font-family: var(--font-lob);
-      letter-spacing: 2px;
-      position: relative;
+      a {
+        ${({ theme }) => theme.mixin.flex_center}
+        padding: 10px;
+        background-color: transparent;
+        border: 2px solid var(--white);
+        border-radius: 50%;
+        &:hover,
+        &:focus {
+          svg {
+            transform: translateY(-2px);
+          }
+        }
 
-      &:before {
-        position: absolute;
-        content: '';
-        width: 5px;
-        height: 40px;
-        background-color: var(--blue);
-        margin-left: -10px;
+        svg {
+          transition: var(--transition);
+          width: 1.3rem;
+          height: 1.3rem;
+        }
       }
     }
   }
-
-  .copyright {
-    ${({ theme }) => theme.mixin.flex_column}
-
-    .year {
-      font-weight: bold;
-      color: var(--blue-hover);
-      margin-bottom: 5px;
-    }
-
-    .rights {
-      text-transform: uppercase;
-      color: var(--white-dark);
-      font-style: oblique;
-    }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
-const TechUsed = styled.div`
-  background-color: var(--black);
-  margin-top: 20px;
-  padding: 20px;
-  width: 100%;
-  height: 5vh;
-  text-align: center;
-  ${({ theme }) => theme.mixin.flex_center}
+const LogoContainer = styled.div`
+  ${({ theme }) => theme.mixin.flex_column}
+  width: 25%;
 
-  span {
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+  h3 {
+    font-family: var(--font-lob);
+    font-size: var(--fs-xl);
+  }
+  p {
+    font-size: var(--fs-m);
+    color: var(--white);
+    font-style: oblique;
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
     width: 100%;
-
-    svg {
-      margin-left: 5px;
-      width: 16px;
-      height: 16px;
-    }
+  }
+`;
+const TechUsedContainer = styled.div`
+  ${({ theme }) => theme.mixin.flex_center}
+  width: 50%;
+  p {
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+  svg {
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 10px;
   }
 `;
 
 const Footer = () => (
   <StyledFooter>
-    <FooterContent>
-      <div className="main-content">
+    <StyledRelativeFooter>
+      <SocialContainer>
+        <ul>
+          {SocialMedia &&
+            SocialMedia.map(({ name, url }, i) => (
+              <li key={i}>
+                <a href={url} aria-label={name}>
+                  <Icon name={name}></Icon>
+                </a>
+              </li>
+            ))}
+        </ul>
+      </SocialContainer>
+      <LogoContainer>
         <IconLogo />
-        <h2>Anish shetty k</h2>
-      </div>
-      <div className="copyright">
-        <p className="year">&#169; 2020</p>
-        <p className="rights">all rights reserved</p>
-      </div>
-    </FooterContent>
-    <TechUsed>
-      <span>
-        Built with <ReactIcon /> <GatsbyIcon /> and 💖💖
-      </span>
-    </TechUsed>
+        <h3>Anish shetty k</h3>
+        <p>&#169; 2020</p>
+      </LogoContainer>
+      <TechUsedContainer>
+        <p>
+          Built with <ReactIcon /> <GatsbyIcon /> and love.
+        </p>
+      </TechUsedContainer>
+    </StyledRelativeFooter>
   </StyledFooter>
 );
 

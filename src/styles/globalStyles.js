@@ -79,7 +79,7 @@ body{
     overflow-x:hidden;
     background-color: var(--black);
     color: var(--white-dark);
-    font-size:Var(--fs-l);
+    font-size:Var(--fs-s);
     line-height:1.3;
     font-family:var(--font-bit);
     line-height: 1.3;
@@ -128,6 +128,7 @@ a{
 }
 
 ul {
+  list-style: none;
     &.fancy-list {
       padding: 0;
       margin: 0;

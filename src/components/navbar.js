@@ -52,7 +52,6 @@ const HeaderStyled = styled.header`
 const StyledNav = styled.nav`
   ${({ theme }) => theme.mixin.flex_between}
   position: relative;
-  color: var(--blue);
   font-family: var(--font-rob);
   z-index: 11;
   .logo {
@@ -71,7 +70,6 @@ const StyledLinks = styled.div`
 
   ul {
     ${({ theme }) => theme.mixin.flex_between}
-
     list-style: none;
 
     li {
@@ -85,6 +83,7 @@ const StyledLinks = styled.div`
         font-weight: 900;
         position: relative;
         display: block;
+        color: var(--white-lightest);
         transition: var(--transition);
 
         &:before {
@@ -94,7 +93,7 @@ const StyledLinks = styled.div`
           height: 2px;
           bottom: -5px;
           left: 0;
-          background-color: var(--blue-hover);
+          background-color: var(--blue);
           visibility: hidden;
           width: 0px;
           transition: all 0.3s ease-in-out 0s;
@@ -181,7 +180,7 @@ const Navbar = ({ home }) => {
             <CSSTransition classNames={classFadeDown} timeout={timeout}>
               <div style={{ transitionDelay: `${home ? Links.length * 100 : 0}ms` }}>
                 <a href="/" className="resumeButton">
-                  resume
+                  Resume
                 </a>
               </div>
             </CSSTransition>
