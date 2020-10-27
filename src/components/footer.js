@@ -2,31 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconLogo, ReactIcon, GatsbyIcon, Icon } from '@components/icons';
 import { SocialMedia } from './../stableData/data_web';
+import FooterWaveSvg from './../stableData/waveFooter.svg';
 
 const StyledFooter = styled.footer`
-  min-height: 10vh;
+  min-height: 20vh;
   width: 100%;
-  height: 100%;
-  padding: 20px;
-  background: var(--black); /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    var(--black),
-    var(--navy),
-    var(--black)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    var(--black),
-    var(--navy),
-    var(--black)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden;
+  padding: 10px;
+  background-image: url(${FooterWaveSvg});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 const StyledRelativeFooter = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   ${({ theme }) => theme.mixin.flex_center}
 
   @media (max-width:768px) {
@@ -85,7 +74,6 @@ const LogoContainer = styled.div`
     font-size: var(--fs-m);
     color: var(--white);
     font-style: oblique;
-    text-decoration: underline;
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -97,6 +85,7 @@ const TechUsedContainer = styled.div`
   p {
     color: var(--white);
     letter-spacing: 1px;
+    font-weight: bolder;
   }
   svg {
     margin: 5px;
