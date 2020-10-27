@@ -127,7 +127,7 @@ const Navbar = ({ home }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsMounted(true);
-    }, 100);
+    }, 1000);
     window.addEventListener('scroll', handleScroll);
 
     return () => {

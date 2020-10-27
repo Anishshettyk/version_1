@@ -24,7 +24,7 @@ const StyledSideElement = styled.div`
 
 const Fixed = ({ home, orientation, children }) => {
   const [isMounted, setIsMounted] = useState(!home);
-  const loaderDelay = 1000;
+  const loaderDelay = 1500;
 
   useEffect(() => {
     if (!home) {

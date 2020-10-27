@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Navbar, Footer, Social, Loader } from '@components';
+import { Navbar, Footer, Social } from '@components';
 import { GlobalStyles, theme } from '@styles';
 
 const LayoutContainer = styled.div`
@@ -13,7 +13,7 @@ const LayoutContainer = styled.div`
 
 const Layout = ({ children, location }) => {
   const home = location.pathname === '/';
-  const [isLoading, setIsLoading] = useState(home);
+  const [isLoading] = useState(home);
   useEffect(() => {
     if (isLoading) {
       return;
@@ -41,17 +41,13 @@ const Layout = ({ children, location }) => {
       <div id="root">
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          {isLoading && home ? (
-            <Loader finishLoading={() => setIsLoading(false)} />
-          ) : (
-            <LayoutContainer>
-              <Navbar home={home} />
-              <Social home={home} />
+          <LayoutContainer>
+            <Navbar home={home} />
+            <Social home={home} />
 
-              <div id="content">{children}</div>
-              <Footer />
-            </LayoutContainer>
-          )}
+            <div id="content">{children}</div>
+            <Footer />
+          </LayoutContainer>
         </ThemeProvider>
       </div>
     </>
