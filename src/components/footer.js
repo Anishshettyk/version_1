@@ -12,6 +12,8 @@ const StyledFooter = styled.footer`
   background-image: url(${FooterWaveSvg});
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top center;
+  background-color: var(--navy);
 `;
 const StyledRelativeFooter = styled.div`
   width: 100%;
@@ -39,8 +41,11 @@ const SocialContainer = styled.div`
         background-color: transparent;
         border: 2px solid var(--white);
         border-radius: 50%;
+        transition: var(--transition);
         &:hover,
         &:focus {
+          transform: scale(1.05);
+          border-color: var(--blue);
           svg {
             transform: translateY(-2px);
           }

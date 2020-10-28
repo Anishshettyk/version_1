@@ -31,17 +31,25 @@ const StyledSocialList = styled.ul`
   }
 
   li {
+    margin: 2px;
     padding: 10px;
+    background-color: var(--blue-inside);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
 
     a {
-      &:hover,
-      &:focus {
-        transform: translateY(-3px);
-      }
-
       svg {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+    &:hover,
+    &:focus {
+      background-color: var(--blue-inside);
+      transform: translateY(-3px);
+      border: 1px solid var(--blue);
+      a {
+        transform: scale(1.05);
       }
     }
   }

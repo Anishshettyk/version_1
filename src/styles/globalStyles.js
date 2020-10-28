@@ -215,6 +215,40 @@ svg {
     grid-template-columns: 100%;
 }
 
+main{
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1600px;
+  padding:200px 150px;
+
+  @media (max-width: 1080px) {
+      padding: 200px 100px;
+  }
+  @media (max-width: 768px) {
+      padding: 150px 50px;
+  }
+  @media (max-width: 480px) {
+      padding: 125px 25px;
+  }
+
+  &.insideAdjust {
+      padding: 10vh 150px;
+
+      @media (max-width: 1080px) {
+        padding: 10vh 100px;
+      }
+      @media (max-width: 768px) {
+        padding: 10vh 50px;
+      }
+      @media (max-width: 480px) {
+        padding: 10vh 25px;
+      }
+    }
+}
+
+
+
 ${TransitionStyles}
 
 `;

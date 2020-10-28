@@ -135,7 +135,7 @@ const Navbar = ({ home }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const loaderDelay = 1000;
+  const loaderDelay = 1500;
   const timeout = loaderDelay;
   const classFade = 'fade';
   const classFadeDown = 'fadedown';
