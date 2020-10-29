@@ -8,7 +8,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@fonts': path.resolve(__dirname, 'src/fonts'),
         '@hooks': path.resolve(__dirname, 'src/hooks/'),
-        '@data_web': path.resolve(__dirname, 'src/stableData/'),
+        '@blobs': path.resolve(__dirname, 'src/stableData/blobs'),
+        '@utils': path.resolve(__dirname, 'src/utils/'),
       },
     },
   });

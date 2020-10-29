@@ -30,6 +30,7 @@ ${Fonts};
     --fs-xl:22px;
     --fs-xxl:24px;
     --fs-heavy:128px;
+    --fs-heavy-more:140px;
     --fs-heavy-less:100px;
 
     //heading font-size
@@ -95,7 +96,7 @@ h1,h2,h3,h4,h5,h6{
     color:var(--white-lightest);
     margin:0 0 10px 0;
     font-weight:600;
-
+    font-family: var(--font-rob);
 }
 
 .big-heading {

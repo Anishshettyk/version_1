@@ -50,6 +50,7 @@ const StyledSocialList = styled.ul`
       border: 1px solid var(--blue);
       a {
         transform: scale(1.05);
+        outline: none;
       }
     }
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconLogo, ReactIcon, GatsbyIcon, Icon } from '@components/icons';
 import { SocialMedia } from './../stableData/data_web';
-import FooterWaveSvg from './../stableData/waveFooter.svg';
+import FooterWaveSvg from './../stableData/svgs/waveFooter.svg';
 
 const StyledFooter = styled.footer`
   min-height: 20vh;

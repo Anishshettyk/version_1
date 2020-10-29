@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LoaderSvg from './stableData/three-dots.svg';
+import LoaderSvg from './stableData/svgs/three-dots.svg';
 
 export default function HTML(props) {
   return (
