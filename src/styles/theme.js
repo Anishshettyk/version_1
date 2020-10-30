@@ -1,7 +1,7 @@
 import mixin from './mixin';
 
 const theme = {
-  breakpoints: {
+  bp: {
     mobileS: `max-width: 330px`,
     mobileM: `max-width: 400px`,
     mobileL: `max-width: 480px`,

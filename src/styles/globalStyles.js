@@ -43,7 +43,7 @@ ${Fonts};
     //nav-height
     --nav-height:10vh;
 
-    --nav-scroll-height: 7vh;
+    --nav-scroll-height: 10vh;
 
     //fonts
     --font-rob:'roboto',sans-serif;//heading

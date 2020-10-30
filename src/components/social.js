@@ -18,7 +18,7 @@ const StyledSocialList = styled.ul`
     height: 90px;
     margin: 0 auto;
     background-color: var(--line-color);
-    opacity: 0.3;
+    opacity: 0.1;
   }
   &:before {
     content: '';
@@ -27,7 +27,7 @@ const StyledSocialList = styled.ul`
     height: 70vh;
     margin: 0 auto;
     background-color: var(--line-color);
-    opacity: 0.3;
+    opacity: 0.1;
   }
 
   li {

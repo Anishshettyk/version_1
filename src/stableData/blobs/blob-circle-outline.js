@@ -11,7 +11,7 @@ const BlobHeaderCircleOutline = () => (
       d="M379,344Q311,438,191.5,408.5Q72,379,74,251Q76,123,191,101Q306,79,376.5,164.5Q447,250,379,344Z"
       fill="none"
       strokeWidth="30px"
-      stroke="#00cec9"></path>
+      stroke="#fc5664"></path>
   </svg>
 );
 

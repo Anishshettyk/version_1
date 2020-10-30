@@ -8,18 +8,31 @@ import { HeroBlob } from './../../stableData/data_web';
 const StyledHeroContainer = styled.div`
   position: relative;
   min-height: 100vh;
-  padding: 10vh 0;
+  width: 100%;
+  padding: 10vh 0 0 0;
   ${({ theme }) => theme.mixin.flex_center};
   overflow: hidden;
-  &:before {
+  &:after {
     content: 'Developer';
     position: absolute;
-    font-size: clamp(var(--fs-heavy-less), 17vw, var(--fs-heavy-more));
+    font-size: clamp(var(--fs-heavy-less), 20vh, var(--fs-heavy-more));
     font-weight: 900;
-    opacity: 0.1;
-    bottom: 0%;
-    right: 0%;
-    z-index: 3;
+    color: var(--line-color);
+    opacity: 0.2;
+    bottom: 35%;
+    right: -17%;
+    transform: rotate(90deg);
+    z-index: 2;
+    margin: 0 auto;
+    @media (${({ theme }) => theme.bp.desktopM}) {
+      right: -25%;
+    }
+    @media (${({ theme }) => theme.bp.desktopXS}) {
+      right: -33%;
+    }
+    @media (${({ theme }) => theme.bp.tabletS}) {
+      display: none;
+    }
   }
 
   .blobContainer {
@@ -29,12 +42,14 @@ const StyledHeroContainer = styled.div`
     right: 0;
     bottom: 0;
     z-index: 1;
-    opacity: 0.7;
+    opacity: 0.6;
+    animation: changeBlob 22s linear infinite;
     #blobcirclesvg {
       position: inherit;
       width: 20vw;
       top: -10%;
       left: 60%;
+      opacity: 1;
     }
     #BlobheaderOutlineBottom {
       position: inherit;
@@ -57,8 +72,26 @@ const StyledHeroContainer = styled.div`
     #BlobHeaderSide {
       position: inherit;
       width: 30vw;
-      bottom: 0%;
+      bottom: -35%;
       right: -15%;
+      opacity: 0.5;
+    }
+    @keyframes changeBlob {
+      0% {
+        transform: translateX(0px) rotate3d(1, 1, 1, 0deg);
+      }
+      25% {
+        transform: translateX(13px) rotate3d(2, 2, 2, 2deg);
+      }
+      50% {
+        transform: translateX(0px) rotate3d(1, 1, 1, 0deg);
+      }
+      75% {
+        transform: translateX(-13px) rotate3d(2, 2, 2, -2deg);
+      }
+      100% {
+        transform: translateX(0px) rotate3d(1, 1, 1, 0deg);
+      }
     }
   }
   .heroContentContainer {
@@ -128,12 +161,9 @@ const Hero = () => {
 
   return (
     <StyledHeroContainer>
-      {HeroBlob &&
-        HeroBlob.map(({ name }, i) => (
-          <div key={i} className="blobContainer">
-            <Blob name={name} />
-          </div>
-        ))}
+      <div className="blobContainer">
+        {HeroBlob && HeroBlob.map(({ name }, i) => <Blob name={name} key={i} />)}
+      </div>
       <div className="heroContentContainer">
         <TransitionGroup component={null}>
           {isMounted &&
