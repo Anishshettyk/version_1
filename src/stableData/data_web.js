@@ -35,21 +35,4 @@ module.exports = {
       url: 'https://www.linkedin.com/in/anish-shetty-k-anish-a088b5164/',
     },
   ],
-  HeroBlob: [
-    {
-      name: 'BlobHeaderCircle',
-    },
-    {
-      name: 'BlobheaderOutlineBottom',
-    },
-    {
-      name: 'BlobheaderTop',
-    },
-    {
-      name: 'BlobHeaderCircleOutline',
-    },
-    {
-      name: 'BlobHeaderSide',
-    },
-  ],
 };

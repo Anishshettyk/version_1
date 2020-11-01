@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { navbarDelay, LoaderDelay } from '@utils';
-import { Blob } from '@blobs';
-import { HeroBlob } from './../../stableData/data_web';
+import CircleSvg from './../../stableData/svgs/circle';
+import SquareSvg from './../../stableData/svgs/square';
 
 const StyledHeroContainer = styled.div`
   position: relative;
@@ -35,62 +35,103 @@ const StyledHeroContainer = styled.div`
     }
   }
 
-  .blobContainer {
+  .shapeContainer {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 1;
-    opacity: 0.6;
-    animation: changeBlob 22s linear infinite;
-    #blobcirclesvg {
+    .heroCirclesvg {
+      animation: circleRotate 5s linear infinite;
+    }
+    .heroCirclesvg0 {
       position: inherit;
-      width: 20vw;
-      top: -10%;
+      top: 2%;
+      left: -2%;
+      width: 15vw;
+    }
+    .heroCirclesvg1 {
+      position: inherit;
+      top: 90%;
+      left: 50%;
+      width: 14vw;
+    }
+    .heroCirclesvg2 {
+      position: inherit;
+      top: 10%;
+      left: 80%;
+      width: 2vw;
+    }
+    .heroCirclesvg3 {
+      position: inherit;
+      top: 20%;
       left: 60%;
-      opacity: 1;
+      width: 20vw;
     }
-    #BlobheaderOutlineBottom {
-      position: inherit;
-      width: 40vw;
-      top: 35%;
-      left: -20%;
-    }
-    #BlobheaderTop {
-      position: inherit;
-      width: 40vw;
-      top: -50%;
-      left: 20%;
-    }
-    #BlobHeaderCircleOutline {
-      position: inherit;
-      width: 10vw;
-      top: 25%;
-      left: 30%;
-    }
-    #BlobHeaderSide {
-      position: inherit;
-      width: 30vw;
-      bottom: -35%;
-      right: -15%;
-      opacity: 0.5;
-    }
-    @keyframes changeBlob {
+    @keyframes circleRotate {
       0% {
-        transform: translateX(0px) rotate3d(1, 1, 1, 0deg);
+        transform: rotate(0deg);
       }
       25% {
-        transform: translateX(13px) rotate3d(2, 2, 2, 2deg);
+        transform: rotate(90deg);
       }
       50% {
-        transform: translateX(0px) rotate3d(1, 1, 1, 0deg);
+        transform: rotate(180deg);
       }
       75% {
-        transform: translateX(-13px) rotate3d(2, 2, 2, -2deg);
+        transform: rotate(270deg);
       }
       100% {
-        transform: translateX(0px) rotate3d(1, 1, 1, 0deg);
+        transform: rotate(360deg);
+      }
+    }
+    .heroSquaresvg {
+      animation: squareMove 10s linear infinite;
+    }
+    .heroSquaresvg0 {
+      position: inherit;
+      top: 90%;
+      left: 0%;
+      width: 20vw;
+      opacity: 0.5;
+    }
+    .heroSquaresvg1 {
+      position: inherit;
+      top: 20%;
+      left: 40%;
+      width: 5vw;
+      opacity: 1;
+    }
+    .heroSquaresvg2 {
+      position: inherit;
+      top: 70%;
+      left: 80%;
+      width: 7vw;
+      opacity: 0.7;
+    }
+    .heroSquaresvg3 {
+      position: inherit;
+      top: 70%;
+      left: 40%;
+      width: 3vw;
+      opacity: 0.3;
+    }
+    @keyframes squareMove {
+      0% {
+        transform: translateY(0px);
+      }
+      25% {
+        transform: translateY(10px);
+      }
+      50% {
+        transform: translateY(0px);
+      }
+      75% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
       }
     }
   }
@@ -159,10 +200,30 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   });
 
+  const circles = [];
+  for (let i = 0; i < 4; i++) {
+    circles.push(<CircleSvg />);
+  }
+  const squares = [];
+  for (let i = 0; i < 4; i++) {
+    squares.push(<SquareSvg />);
+  }
+
   return (
     <StyledHeroContainer>
-      <div className="blobContainer">
-        {HeroBlob && HeroBlob.map(({ name }, i) => <Blob name={name} key={i} />)}
+      <div className="shapeContainer">
+        {isMounted &&
+          circles.map((circle, i) => (
+            <div key={i} className={`heroCirclesvg heroCirclesvg${i}`}>
+              {circle}
+            </div>
+          ))}
+        {isMounted &&
+          squares.map((square, i) => (
+            <div key={i} className={`heroSquaresvg heroSquaresvg${i}`}>
+              {square}
+            </div>
+          ))}
       </div>
       <div className="heroContentContainer">
         <TransitionGroup component={null}>
