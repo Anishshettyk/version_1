@@ -101,22 +101,25 @@ const StyledHeroContainer = styled.div`
       position: inherit;
       top: 90%;
       left: 0%;
-      width: 15vw;
-      opacity: 0.8;
+      width: 10vw;
+      opacity: 0.1;
+      animation-duration: 100s;
     }
     .heroSquaresvg1 {
       position: inherit;
       top: 20%;
       left: 40%;
       width: 5vw;
-      opacity: 1;
+      opacity: 0.3;
+      animation-duration: 40s;
     }
     .heroSquaresvg2 {
       position: inherit;
       top: 70%;
       left: 80%;
       width: 7vw;
-      opacity: 0.7;
+      opacity: 0.3;
+      animation-duration: 120s;
     }
     .heroSquaresvg3 {
       position: inherit;
@@ -125,6 +128,37 @@ const StyledHeroContainer = styled.div`
       width: 3vw;
       opacity: 0.3;
     }
+    .heroSquaresvg4 {
+      position: inherit;
+      top: 10%;
+      left: 90%;
+      width: 4vw;
+      opacity: 0.2;
+    }
+    .heroSquaresvg5 {
+      position: inherit;
+      top: 70%;
+      left: 95%;
+      width: 2vw;
+      opacity: 0.4;
+      animation-duration: 20s;
+    }
+    .heroSquaresvg6 {
+      position: inherit;
+      top: 30%;
+      left: 30%;
+      width: 3vw;
+      opacity: 0.3;
+      animation-duration: 45s;
+    }
+    .heroSquaresvg7 {
+      position: inherit;
+      top: 90%;
+      left: 70%;
+      width: 5vw;
+      opacity: 0.4;
+    }
+
     @keyframes squareMove {
       0% {
         transform: translateY(0px);
@@ -238,7 +272,7 @@ const Hero = () => {
     circles.push(<CircleSvg />);
   }
   const squares = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 8; i++) {
     squares.push(<SquareSvg />);
   }
 
