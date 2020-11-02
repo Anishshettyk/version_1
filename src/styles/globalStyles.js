@@ -22,6 +22,7 @@ ${Fonts};
     
 
     //font-size
+    --fs-vxs:10px;
     --fs-xxs:12px;
     --fs-xs:14px;
     --fs-s:16px;

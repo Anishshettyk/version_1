@@ -81,6 +81,7 @@ const mixin = {
     border: 2px solid transparent;
     border-image: linear-gradient(to right, var(--blue) 0%, var(--blue-hover) 100%);
     border-image-slice: 1;
+    background-color: var(--black);
     color: var(--white-lightest);
     font-size: var(--fs-xs);
     font-family: var(--font-bit);
@@ -89,7 +90,7 @@ const mixin = {
     text-decoration: none;
     cursor: pointer;
     padding: 0.7rem 1.3rem;
-    transition: var(--transition);
+    transition: none;
 
     &:hover,
     &:focus,

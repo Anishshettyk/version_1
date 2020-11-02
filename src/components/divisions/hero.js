@@ -181,13 +181,17 @@ const StyledHeroContainer = styled.div`
       ${({ theme }) => theme.mixin.flex_center};
       margin-top: 2vh;
       .hero-button {
+        display: block;
         ${({ theme }) => theme.mixin.smallButton}
         ${({ theme }) => theme.mixin.flex_center}
         text-transform: uppercase;
         margin: 20px;
         box-shadow: none;
+        text-align: center;
         @media (max-width: 480px) {
           margin-left: 2px;
+          font-size: var(--fs-vxs);
+          margin: 10px;
         }
       }
     }
