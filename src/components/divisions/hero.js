@@ -17,7 +17,7 @@ const StyledHeroContainer = styled.div`
     position: absolute;
     font-size: clamp(var(--fs-heavy-less), 20vh, var(--fs-heavy-more));
     font-weight: 900;
-    color: var(--line-color);
+    color: var(--white-dark);
     opacity: 0.2;
     bottom: 35%;
     right: -17%;
@@ -50,12 +50,20 @@ const StyledHeroContainer = styled.div`
       top: 2%;
       left: -2%;
       width: 15vw;
+      @media (${({ theme }) => theme.bp.mobileL}) {
+        width: 30vw;
+      }
     }
     .heroCirclesvg1 {
       position: inherit;
       top: 90%;
       left: 50%;
       width: 14vw;
+      @media (${({ theme }) => theme.bp.mobileL}) {
+        width: 30vw;
+        top: 90%;
+        left: 75%;
+      }
     }
     .heroCirclesvg2 {
       position: inherit;
@@ -87,14 +95,14 @@ const StyledHeroContainer = styled.div`
       }
     }
     .heroSquaresvg {
-      animation: squareMove 10s linear infinite;
+      animation: squareMove 90s linear infinite;
     }
     .heroSquaresvg0 {
       position: inherit;
       top: 90%;
       left: 0%;
-      width: 20vw;
-      opacity: 0.5;
+      width: 15vw;
+      opacity: 0.8;
     }
     .heroSquaresvg1 {
       position: inherit;
@@ -122,13 +130,13 @@ const StyledHeroContainer = styled.div`
         transform: translateY(0px);
       }
       25% {
-        transform: translateY(10px);
+        transform: translateY(-200px);
       }
       50% {
         transform: translateY(0px);
       }
       75% {
-        transform: translateY(-10px);
+        transform: translateY(200px);
       }
       100% {
         transform: translateY(0px);
@@ -185,9 +193,15 @@ const StyledHeroContainer = styled.div`
         ${({ theme }) => theme.mixin.smallButton}
         ${({ theme }) => theme.mixin.flex_center}
         text-transform: uppercase;
-        margin: 20px;
         box-shadow: none;
+        margin: 20px;
         text-align: center;
+        letter-spacing: 1.5px;
+        &:hover,
+        &:active {
+          box-shadow: 5px 5px 10px 1px var(--blue-inside);
+          font-weight: bold;
+        }
         @media (max-width: 480px) {
           margin-left: 2px;
           font-size: var(--fs-vxs);

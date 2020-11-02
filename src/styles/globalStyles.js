@@ -146,7 +146,7 @@ ul {
   }
 
 p{
-    color:var(--white-dark);
+    color:var(--white);
 }
 
 button {

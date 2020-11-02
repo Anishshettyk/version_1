@@ -78,7 +78,7 @@ const mixin = {
     }
   `,
   smallButton: css`
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     border-image: linear-gradient(to right, var(--blue) 0%, var(--blue-hover) 100%);
     border-image-slice: 1;
     background-color: var(--black);
