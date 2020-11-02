@@ -56,6 +56,7 @@ const StyledNav = styled.nav`
   z-index: 11;
   .logo {
     ${({ theme }) => theme.mixin.flex_center};
+    transition: none;
     a {
       margin-top: 17px;
     }
