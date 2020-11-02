@@ -139,6 +139,7 @@ const StyledHeroContainer = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 0 5vw;
     ${({ theme }) => theme.mixin.flex_column};
     align-items: flex-start;
     z-index: 3;
@@ -174,6 +175,20 @@ const StyledHeroContainer = styled.div`
       }
       @media (max-width: 480px) {
         margin-left: 2px;
+      }
+    }
+    .button-container {
+      ${({ theme }) => theme.mixin.flex_center};
+      margin-top: 2vh;
+      .hero-button {
+        ${({ theme }) => theme.mixin.smallButton}
+        ${({ theme }) => theme.mixin.flex_center}
+        text-transform: uppercase;
+        margin: 20px;
+        box-shadow: none;
+        @media (max-width: 480px) {
+          margin-left: 2px;
+        }
       }
     }
   }
@@ -233,6 +248,20 @@ const Hero = () => {
                 <div style={{ transitionDelay: `${i + 1}00ms` }}>{total}</div>
               </CSSTransition>
             ))}
+        </TransitionGroup>
+        <TransitionGroup component={null}>
+          {isMounted && (
+            <CSSTransition classNames="fadeup" timeout={LoaderDelay}>
+              <div className="button-container">
+                <a href="/about" className="hero-button">
+                  more about me
+                </a>
+                <a href="/contact" className="hero-button">
+                  contact me
+                </a>
+              </div>
+            </CSSTransition>
+          )}
         </TransitionGroup>
       </div>
     </StyledHeroContainer>

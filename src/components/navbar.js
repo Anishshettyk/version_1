@@ -146,7 +146,7 @@ const Navbar = ({ home }) => {
         <TransitionGroup component={null}>
           {isMounted && (
             <CSSTransition classNames={classFade} timeout={timeout}>
-              <div className="logo" tabIndex="-1">
+              <div className="logo">
                 {home ? (
                   <a href="/" aria-label="home">
                     <IconLogo />

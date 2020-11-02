@@ -78,12 +78,14 @@ const mixin = {
     }
   `,
   smallButton: css`
-    color: var(--blue);
-    background-color: transparent;
-    border: 1px solid var(--blue);
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, var(--blue) 0%, var(--blue-hover) 100%);
+    border-image-slice: 1;
+    color: var(--white-lightest);
     font-size: var(--fs-xs);
     font-family: var(--font-bit);
     line-height: 1;
+    box-shadow: 0 5px 12px 2px var(--blue-inside);
     text-decoration: none;
     cursor: pointer;
     padding: 0.7rem 1.3rem;
@@ -92,9 +94,10 @@ const mixin = {
     &:hover,
     &:focus,
     &:active {
+      border-image: linear-gradient(to right, var(--blue-hover) 0%, var(--blue) 100%);
+      border-image-slice: 1;
       color: var(--blue-hover);
       outline: none;
-      border: 1px solid var(--blue-hover);
     }
   `,
   bigButton: css`
