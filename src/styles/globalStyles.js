@@ -19,6 +19,9 @@ ${Fonts};
     --white-lightest: #e6f1ff;
     --line-color:#b0b5b1;
     --loader-color:#0f4c75;
+    --danger:red;
+    --red-dark:#fc5664;
+    --yellow-dark:#ffc371;
     
 
     //font-size
@@ -109,6 +112,14 @@ h1,h2,h3,h4,h5,h6{
 .medium-heading {
     margin: 0;
     font-size: clamp(40px, 8vw, 60px);
+}
+
+.gradient-huge-heading {
+  margin: 0;
+  font-size:clamp(160px,50vw,320px);
+  background: linear-gradient(to top,var(--red-dark),var(--yellow-dark));
+  background-clip: text;
+  -webkit-text-fill-color:transparent;
 }
 
 a{

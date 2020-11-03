@@ -76,6 +76,7 @@ const StyledHeroContainer = styled.div`
       top: 20%;
       left: 60%;
       width: 20vw;
+      filter: drop-shadow(0px 0px 20px var(--blue));
     }
     @keyframes circleRotate {
       0% {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Layout, Hero } from '@components';
+import { Layout, Hero, AboutMe } from '@components';
 import styled from 'styled-components';
 
 const Styledmain = styled.main``;
@@ -8,7 +8,9 @@ const Styledmain = styled.main``;
 const IndexPage = ({ location }) => (
   <Layout location={location}>
     <Hero />
-    <Styledmain className="insideAdjust"></Styledmain>
+    <Styledmain className="insideAdjust">
+      <AboutMe />
+    </Styledmain>
   </Layout>
 );
 
