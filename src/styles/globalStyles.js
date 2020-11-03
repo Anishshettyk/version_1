@@ -19,7 +19,6 @@ ${Fonts};
     --white-lightest: #e6f1ff;
     --line-color:#b0b5b1;
     --loader-color:#0f4c75;
-    --danger:red;
     --red-dark:#fc5664;
     --yellow-dark:#ffc371;
     
@@ -118,8 +117,15 @@ h1,h2,h3,h4,h5,h6{
   margin: 0;
   font-size:clamp(160px,50vw,320px);
   background: linear-gradient(to top,var(--red-dark),var(--yellow-dark));
-  background-clip: text;
+  background-clip:text;
+  -webkit-background-clip:text;
+  -moz-background-clip: text;
+  -ms-background-clip:text;
+  -o-background-clip:text;
   -webkit-text-fill-color:transparent;
+  -moz-text-fill-color:transparent;
+  -o-text-fill-color:transparent;
+  -ms-text-fill-color:transparent;
 }
 
 a{
