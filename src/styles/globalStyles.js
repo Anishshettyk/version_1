@@ -80,7 +80,6 @@ html{
   }
 
 body{
-    position: relative;
     min-height: 100%;
     width:100%;
     overflow-x:hidden;
