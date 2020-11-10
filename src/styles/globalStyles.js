@@ -21,6 +21,7 @@ ${Fonts};
     --loader-color:#0f4c75;
     --red-dark:#fc5664;
     --yellow-dark:#ffc371;
+    --image-cover:#73efff;
     
 
     //font-size
@@ -79,6 +80,7 @@ html{
   }
 
 body{
+    position: relative;
     min-height: 100%;
     width:100%;
     overflow-x:hidden;
@@ -112,6 +114,11 @@ h1,h2,h3,h4,h5,h6{
     margin: 0;
     font-size: clamp(40px, 8vw, 60px);
 }
+.small-heading{
+  margin: 0;
+  font-size: clamp(40px, 8vw, 40px);
+}
+
 
 .gradient-huge-heading {
   margin: 0;

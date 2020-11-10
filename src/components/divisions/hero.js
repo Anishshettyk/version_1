@@ -78,6 +78,12 @@ const StyledHeroContainer = styled.div`
       width: 20vw;
       filter: drop-shadow(0px 0px 20px var(--blue));
     }
+    .heroCirclesvg4 {
+      position: inherit;
+      top: 75%;
+      left: 10%;
+      width: 7vw;
+    }
     @keyframes circleRotate {
       0% {
         transform: rotate(0deg);
@@ -269,7 +275,7 @@ const Hero = () => {
   });
 
   const circles = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     circles.push(<CircleSvg />);
   }
   const squares = [];

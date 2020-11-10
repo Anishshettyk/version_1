@@ -33,8 +33,8 @@ const pageNotFound = ({ location }) => (
   <Layout location={location}>
     <NotFound className="insideAdjust">
       <h1 className="gradient-huge-heading">404</h1>
-      <h3 className="big-heading">page not found :(</h3>
-      <a href="/">Home is this way</a>
+      <h3 className="big-heading">page not found.</h3>
+      <a href="/">Back to home</a>
     </NotFound>
   </Layout>
 );

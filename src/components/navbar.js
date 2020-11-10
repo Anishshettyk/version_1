@@ -59,6 +59,10 @@ const StyledNav = styled.nav`
     transition: none;
     a {
       margin-top: 17px;
+      #logo {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 `;
