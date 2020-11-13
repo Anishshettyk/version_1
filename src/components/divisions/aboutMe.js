@@ -153,7 +153,7 @@ const AboutMe = () => {
       me: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "me_ori.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
