@@ -43,7 +43,7 @@ const StyledHeroContainer = styled.div`
     bottom: 0;
     z-index: 1;
     .heroCirclesvg {
-      animation: circleRotate 5s linear infinite;
+      animation: circleRotate 4s linear infinite;
     }
     .heroCirclesvg0 {
       position: inherit;
@@ -238,6 +238,7 @@ const StyledHeroContainer = styled.div`
         margin: 20px;
         text-align: center;
         letter-spacing: 1.5px;
+
         &:hover,
         &:active {
           box-shadow: 5px 5px 10px 1px var(--blue-inside);

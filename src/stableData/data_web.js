@@ -35,4 +35,24 @@ module.exports = {
       url: 'https://www.linkedin.com/in/anish-shetty-k-anish-a088b5164/',
     },
   ],
+  TechKnown: [
+    {
+      name: 'HTML',
+    },
+    {
+      name: 'css & scss',
+    },
+    {
+      name: 'Javascript (ES6 +)',
+    },
+    {
+      name: 'Node js',
+    },
+    {
+      name: 'React',
+    },
+    {
+      name: 'Gatsby',
+    },
+  ],
 };

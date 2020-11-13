@@ -33,21 +33,19 @@ const StyledSocialList = styled.ul`
   li {
     margin: 2px;
     padding: 10px;
-    background-color: var(--blue-inside);
+    background: linear-gradient(to top, var(--blue-inside), var(--loader-color));
     border-radius: var(--border-radius);
     transition: var(--transition);
 
-    a {
-      svg {
-        width: 25px;
-        height: 25px;
-      }
+    svg {
+      width: 25px;
+      height: 25px;
     }
+
     &:hover,
     &:focus {
-      background-color: var(--blue-inside);
+      background: linear-gradient(to bottom, var(--blue-inside), var(--loader-color));
       transform: translateY(-3px);
-      border: 1px solid var(--blue);
       a {
         transform: scale(1.05);
         outline: none;
@@ -61,11 +59,11 @@ const Social = ({ home }) => (
     <StyledSocialList>
       {SocialMedia &&
         SocialMedia.map(({ name, url }, i) => (
-          <li key={i}>
-            <a href={url} aria-label={name}>
+          <a href={url} aria-label={name} key={i}>
+            <li>
               <Icon name={name}></Icon>
-            </a>
-          </li>
+            </li>
+          </a>
         ))}
     </StyledSocialList>
   </Fixed>

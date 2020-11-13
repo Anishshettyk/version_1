@@ -85,6 +85,7 @@ const StyledLinks = styled.div`
       a {
         padding: 10px 10px 0px 10px;
         text-transform: uppercase;
+        letter-spacing: 1px;
         font-weight: 900;
         position: relative;
         display: block;

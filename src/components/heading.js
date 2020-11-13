@@ -5,19 +5,22 @@ import styled from 'styled-components';
 const StyledHeading = styled.h1`
   text-align: center;
   position: relative;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+
   span {
     color: var(--blue-hover);
   }
-  &:before {
+  &:after {
     content: '';
-    display: inline-block;
     position: absolute;
-    margin-left: -20px;
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(to left, var(--red-dark), var(--yellow-dark));
+    bottom: 0;
+    left: calc(50% - 50px);
     border-radius: var(--border-radius);
-    width: 7px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--red-dark), var(--yellow-dark));
   }
   @media (${({ theme }) => theme.bp.mobileM}) {
     font-size: var(--fs-xxl);

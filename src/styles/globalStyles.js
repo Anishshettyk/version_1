@@ -11,7 +11,7 @@ ${Fonts};
     --black:#1a1a2e;
     --navy:#16213e;
     --blue-inside:#0f3460;
-    --blue:#00adb5;
+    --blue:#73efff;
     --blue-hover:#00dea1;
     --white-dark: #8892b0;
     --white: #a8b2d1;
@@ -21,7 +21,10 @@ ${Fonts};
     --loader-color:#0f4c75;
     --red-dark:#fc5664;
     --yellow-dark:#ffc371;
-    --image-cover:#73efff;
+    --blue-dark:#00adb5;
+
+    //rgba colors
+    --line-color-a:rgba(176,181,177,0.2);
     
 
     //font-size
@@ -76,7 +79,7 @@ html{
 
 ::selection {
     background-color: var(--blue);
-    color: var(--white-lightest);
+    color: var(--black);
   }
 
 body{
@@ -138,6 +141,7 @@ a{
     display:inline-block;
     color:var(--blue);
     text-decoration:none;
+    font-weight:900;
     text-decoration-skip-ink: auto;
     position:relative;
     cursor:pointer;
@@ -170,6 +174,8 @@ ul {
 
 p{
     color:var(--white);
+    font-size:var(--fs-s);
+    line-height:1.4;
 }
 
 button {
