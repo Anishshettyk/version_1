@@ -60,6 +60,10 @@ ${Fonts};
     //transition
     --transition: all 0.5s ease;
     --cubic:cubic-bezier(.06,.07,.03,1);
+
+    //box-shadow
+    --button-shadow:2px 2px 10px 5px var(--blue-inside);
+    --button-shadow-click:4px 4px 5px 0px var(--blue-inside);
    
 }
 
@@ -238,6 +242,9 @@ svg {
     height: 100%;
     fill: currentColor;
     vertical-align: middle;
+}
+.react-icon{
+  width:var(--fs-xxl);
 }
 
 #root {

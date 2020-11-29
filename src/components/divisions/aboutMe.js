@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { Heading } from '@components';
+import { srConfig } from './../../config';
+import sr from '@utils/sr';
 import { TechKnown } from './../../stableData/data_web';
 import { RiCake2Line, RiUserLocationLine } from 'react-icons/ri';
 
-const AboutMeContainer = styled.div`
-  min-height: 100vh;
-`;
+const AboutMeContainer = styled.section``;
 const ContentContainer = styled.div`
   margin-top: 6vh;
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 10px;
 
-  @media (max-width: 768px) {
+  @media (${({ theme }) => theme.bp.tabletL}) {
     display: block;
   }
 `;
@@ -26,54 +26,8 @@ const AboutMePhotoContainer = styled.div`
 
   .my_photo {
     position: relative;
-    max-width: 100%;
-    height: 100%;
     border-radius: var(--border-radius);
-    border: 6px solid var(--yellow-dark);
     transition: var(--transition);
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 20%;
-    height: 20%;
-    z-index: 1;
-    content: '';
-    border-left: 5px solid transparent;
-    border-top: 5px solid transparent;
-    border-image: linear-gradient(to right, var(--red-dark) 0%, var(--yellow-dark) 100%);
-    border-image-slice: 1;
-    transition: var(--transition);
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 20%;
-    height: 20%;
-    z-index: 1;
-    content: '';
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-image: linear-gradient(to left, var(--red-dark) 0%, var(--yellow-dark) 100%);
-    border-image-slice: 1;
-    transition: var(--transition);
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    transform: scale(1.01);
-    &:after {
-      bottom: 10px;
-      right: 10px;
-    }
-    &:before {
-      top: 10px;
-      left: 10px;
-    }
   }
 
   @media (max-width: 768px) {
@@ -81,7 +35,25 @@ const AboutMePhotoContainer = styled.div`
     width: 70%;
   }
 `;
-const AboutMeContentContainer = styled.div``;
+const AboutMeContentContainer = styled.div`
+  @media (${({ theme }) => theme.bp.tabletL}) {
+    margin-top: 3vh;
+  }
+  .aboutMe__buttonContainer {
+    margin-top: 2vh;
+    padding: 2vh 0 0 10px;
+    ${({ theme }) => theme.mixin.flex_start}
+    .aboutMe__button {
+      ${({ theme }) => theme.mixin.smallButton}
+    }
+    .aboutMe__button__red {
+      ${({ theme }) => theme.mixin.smallButtonRed}
+    }
+    a:nth-child(1) {
+      margin-right: 3vw;
+    }
+  }
+`;
 const YearInfoContainer = styled.div`
   padding-top: 5px;
   width: 100%;
@@ -89,13 +61,13 @@ const YearInfoContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--line-color-a);
+  border-bottom: 3px dashed var(--line-color-a);
 
   .year_info {
     ${({ theme }) => theme.mixin.flex_center};
 
     p {
-      font-size: var(--fs-xl);
+      font-size: var(--fs-m);
       font-weight: 900;
       color: var(--white-lightest);
       opacity: 0.8;
@@ -107,7 +79,7 @@ const YearInfoContainer = styled.div`
       }
     }
   }
-  @media (${({ theme }) => theme.bp.mobileM}) {
+  @media (${({ theme }) => theme.bp.mobileS}) {
     display: block;
     p {
       padding: 7px;
@@ -126,22 +98,30 @@ const TechKnownContainer = styled.div`
   p {
     font-weight: bold;
     font-size: var(--fs-m);
+    text-decoration: underline;
+    letter-spacing: 1px;
   }
   ul {
     margin-top: 2vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     li {
       padding: 2px;
-      color: var(--blue-dark);
-      font-style: italic;
-      font-weight: 900;
+      color: var(--white-light);
+      font-weight: 700;
 
       &:before {
         content: '❯';
         padding-right: 10px;
         font-size: var(--fs-m);
-        color: var(--yellow-dark);
+        color: var(--blue);
+      }
+      @media (${({ theme }) => theme.bp.mobileL}) {
+        font-size: var(--fs-xs);
+      }
+      @media (${({ theme }) => theme.bp.mobileS}) {
+        font-size: var(--fs-vxs);
       }
     }
   }
@@ -166,9 +146,13 @@ const AboutMe = () => {
     const age = Math.floor(difference / (1000 * 60 * 60 * 24 * 365.25));
     return age;
   };
+  const revealContainer = useRef(null);
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
 
   return (
-    <AboutMeContainer>
+    <AboutMeContainer ref={revealContainer}>
       <Heading data="About me" />
       <ContentContainer>
         <AboutMePhotoContainer>
@@ -193,7 +177,7 @@ const AboutMe = () => {
             <p>
               I enjoy creating awesome and blazing fast websites for the web that live on the
               internet. Started web development as a time killer during college and now got
-              addicted. My goal is to build products which gives best customers and performant
+              addicted. My goal is to build products which gives best user and performance
               experience.
             </p>
             <p>
@@ -207,6 +191,14 @@ const AboutMe = () => {
             <p>These are some of the technologies i work with,</p>
             <ul> {TechKnown && TechKnown.map(({ name }, i) => <li key={i}>{name}</li>)}</ul>
           </TechKnownContainer>
+          <div className="aboutMe__buttonContainer">
+            <a href="/aboutme" className="aboutMe__button">
+              more info
+            </a>
+            <a href="/" className="aboutMe__button__red">
+              view resume
+            </a>
+          </div>
         </AboutMeContentContainer>
       </ContentContainer>
     </AboutMeContainer>

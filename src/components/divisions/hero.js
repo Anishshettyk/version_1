@@ -234,14 +234,12 @@ const StyledHeroContainer = styled.div`
         ${({ theme }) => theme.mixin.smallButton}
         ${({ theme }) => theme.mixin.flex_center}
         text-transform: uppercase;
-        box-shadow: none;
         margin: 20px;
         text-align: center;
         letter-spacing: 1.5px;
 
         &:hover,
         &:active {
-          box-shadow: 5px 5px 10px 1px var(--blue-inside);
           font-weight: bold;
         }
         @media (max-width: 480px) {
@@ -254,7 +252,7 @@ const StyledHeroContainer = styled.div`
   }
 `;
 
-const greeting = <h3>Hi my name is,</h3>;
+const greeting = <h3>HI my name is,</h3>;
 const name = (
   <h1 className="big-heading">
     Anish shetty k<span>.</span>
@@ -313,7 +311,7 @@ const Hero = () => {
           {isMounted && (
             <CSSTransition classNames="fadeup" timeout={LoaderDelay}>
               <div className="button-container">
-                <a href="/about" className="hero-button">
+                <a href="/aboutme" className="hero-button">
                   more about me
                 </a>
                 <a href="/contact" className="hero-button">

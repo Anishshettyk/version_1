@@ -44,7 +44,6 @@ const Layout = ({ children, location }) => {
           <LayoutContainer>
             <Navbar home={home} />
             <Social home={home} />
-
             <div id="content">{children}</div>
             <Footer />
           </LayoutContainer>

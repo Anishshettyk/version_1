@@ -40,6 +40,11 @@ const mixin = {
     align-items: center;
     justify-content: space-between;
   `,
+  flex_start: css`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  `,
   flex_center: css`
     display: flex;
     justify-content: center;
@@ -86,8 +91,37 @@ const mixin = {
     font-size: var(--fs-xs);
     font-family: var(--font-bit);
     line-height: 1;
-    box-shadow: 0 5px 12px 2px var(--blue-inside);
+    box-shadow: var(--button-shadow);
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 0.7rem 1.3rem;
+    transition: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-image: linear-gradient(to right, var(--red-dark) 0%, var(--yellow-dark) 100%);
+      border-image-slice: 1;
+      color: var(--white);
+      outline: none;
+      box-shadow: var(--button-shadow-click);
+    }
+  `,
+  smallButtonRed: css`
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right, var(--red-dark) 0%, var(--yellow-dark) 100%);
+    border-image-slice: 1;
+    background-color: var(--black);
+    color: var(--white-lightest);
+    font-size: var(--fs-xs);
+    font-family: var(--font-bit);
+    line-height: 1;
+    box-shadow: var(--button-shadow);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
     padding: 0.7rem 1.3rem;
     transition: none;
@@ -97,24 +131,25 @@ const mixin = {
     &:active {
       border-image: linear-gradient(to right, var(--blue-hover) 0%, var(--blue) 100%);
       border-image-slice: 1;
-      color: var(--blue-hover);
+      color: var(--white);
       outline: none;
+      box-shadow: var(--button-shadow-click);
     }
   `,
-  bigButton: css`
-    border: 6px solid transparent;
+  verySmallButton: css`
+    border: 2px solid transparent;
     border-image: linear-gradient(to right, var(--blue) 0%, var(--blue-hover) 100%);
     border-image-slice: 1;
     background-color: var(--black);
     color: var(--white-lightest);
-    font-size: var(--fs-xl);
+    font-size: var(--fs-xs);
     font-family: var(--font-bit);
     font-weight: 900;
     line-height: 1;
-    box-shadow: 0 5px 12px 2px var(--blue-inside);
+    box-shadow: var(--button-shadow);
     text-decoration: none;
     cursor: pointer;
-    padding: 1.4rem 2.7rem;
+    padding: 0.5rem 0.8rem;
     transition: none;
 
     &:hover,
@@ -124,6 +159,29 @@ const mixin = {
       border-image-slice: 1;
       color: var(--blue-hover);
       outline: none;
+      box-shadow: var(--button-shadow-click);
+    }
+  `,
+
+  fillSmallButton: css`
+    padding: 0.6rem 1.3rem;
+    border: 3px solid transparent;
+    background: linear-gradient(to right, var(--blue) 0%, var(--blue-hover) 100%);
+    font-size: var(--fs-xs);
+    font-family: var(--font-bit);
+    font-weight: 900;
+    color: var(--blue-inside);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: var(--button-shadow);
+    &:hover,
+    &:focus,
+    &:active {
+      border: 3px solid var(--blue);
+      background: var(--black);
+      color: var(--white-lightest);
+      box-shadow: var(--button-shadow-click);
     }
   `,
   boxShadow: css`

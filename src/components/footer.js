@@ -74,6 +74,7 @@ const LogoContainer = styled.div`
   h3 {
     font-family: var(--font-lob);
     font-size: var(--fs-xl);
+    letter-spacing: 2px;
   }
   p {
     font-size: var(--fs-m);

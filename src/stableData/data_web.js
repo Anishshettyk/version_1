@@ -40,7 +40,7 @@ module.exports = {
       name: 'HTML',
     },
     {
-      name: 'css & scss',
+      name: 'Css & Scss',
     },
     {
       name: 'Javascript (ES6 +)',
