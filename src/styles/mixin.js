@@ -155,6 +155,32 @@ const mixin = {
     &:hover,
     &:focus,
     &:active {
+      border-image: linear-gradient(to right, var(--yellow-dark) 0%, var(--red-dark) 100%);
+      border-image-slice: 1;
+      color: var(--blue-hover);
+      outline: none;
+      box-shadow: var(--button-shadow-click);
+    }
+  `,
+  verySmallButtonRed: css`
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, var(--red-dark) 0%, var(--yellow-dark) 100%);
+    border-image-slice: 1;
+    background-color: var(--black);
+    color: var(--white-lightest);
+    font-size: var(--fs-xs);
+    font-family: var(--font-bit);
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: var(--button-shadow);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    transition: none;
+
+    &:hover,
+    &:focus,
+    &:active {
       border-image: linear-gradient(to right, var(--blue-hover) 0%, var(--blue) 100%);
       border-image-slice: 1;
       color: var(--blue-hover);

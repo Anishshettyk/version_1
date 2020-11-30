@@ -64,7 +64,7 @@ ${Fonts};
 
     //box-shadow
     --button-shadow:2px 2px 10px 5px var(--blue-inside);
-    --button-shadow-click:4px 4px 5px 0px var(--blue-inside);
+    --button-shadow-click:0px 0px 5px 5px var(--blue-inside);
     --social-shadow: 0px 2px 7px 1px var(--white-dark-a);
    
 }
@@ -252,6 +252,30 @@ svg {
 .react-icon{
   width:var(--fs-xxl);
 }
+.scrollTopIcon{
+  color:var(--blue);
+  transition: var(--transition);
+  box-shadow: var(--button-shadow);
+  border-radius: 50%;
+  animation:scrollTopIconAnimation 2s linear infinite;
+  &:hover,&:focus,&:active{
+    box-shadow: var(--button-shadow-click);
+    color: var(--blue-hover);
+    transform: translateY(-3px);
+  }
+}
+@keyframes scrollTopIconAnimation{
+  0%{
+    transform: translateY(0px);
+  }50%{
+    transform: translateY(-3px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+
 
 #root {
     min-height: 100vh;

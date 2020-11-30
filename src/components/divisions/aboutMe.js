@@ -45,9 +45,15 @@ const AboutMeContentContainer = styled.div`
     ${({ theme }) => theme.mixin.flex_start}
     .aboutMe__button {
       ${({ theme }) => theme.mixin.smallButton}
+      @media (${({ theme }) => theme.bp.tabletL}) {
+        ${({ theme }) => theme.mixin.verySmallButton}
+      }
     }
     .aboutMe__button__red {
       ${({ theme }) => theme.mixin.smallButtonRed}
+      @media (${({ theme }) => theme.bp.tabletL}) {
+        ${({ theme }) => theme.mixin.verySmallButtonRed}
+      }
     }
     a:nth-child(1) {
       margin-right: 3vw;
@@ -173,7 +179,12 @@ const AboutMe = () => {
             </div>
           </YearInfoContainer>
           <StyledText>
-            <p>Hello i'm Anish shetty, a software engineer based in Bangalore IND.</p>
+            <p>
+              Hello i'm Anish shetty, a software engineer based in Bangalore{' '}
+              <span role="img" aria-label="india-flag">
+                &#127470;&#127475;
+              </span>
+            </p>
             <p>
               I enjoy creating awesome and blazing fast websites for the web that live on the
               internet. Started web development as a time killer during college and now got

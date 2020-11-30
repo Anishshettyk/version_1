@@ -242,10 +242,9 @@ const StyledHeroContainer = styled.div`
         &:active {
           font-weight: bold;
         }
-        @media (max-width: 480px) {
-          margin-left: 2px;
-          font-size: var(--fs-vxs);
-          margin: 10px;
+        @media (${({ theme }) => theme.bp.tabletL}) {
+          ${({ theme }) => theme.mixin.verySmallButton}
+          margin: 0 10px 0 0;
         }
       }
     }

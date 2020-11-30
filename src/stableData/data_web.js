@@ -2,7 +2,7 @@ module.exports = {
   Links: [
     {
       name: 'About',
-      url: '/about',
+      url: '/aboutme',
     },
     {
       name: 'Projects',

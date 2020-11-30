@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Navbar, Footer, Social } from '@components';
+import { Navbar, Footer, Social, ScrollToTop } from '@components';
 import { GlobalStyles, theme } from '@styles';
 
 const LayoutContainer = styled.div`
@@ -44,6 +44,7 @@ const Layout = ({ children, location }) => {
           <LayoutContainer>
             <Navbar home={home} />
             <Social home={home} />
+            <ScrollToTop home={home} />
             <div id="content">{children}</div>
             <Footer />
           </LayoutContainer>

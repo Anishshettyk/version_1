@@ -6,19 +6,20 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 const StyledSideElement = styled.div`
   width: 40px;
   position: fixed;
-  bottom: 0;
+  bottom: ${props => (props.orientation === 'left' ? '0px' : '20px')};
   left: ${props => (props.orientation === 'left' ? '30px' : 'auto')};
   right: ${props => (props.orientation === 'left' ? 'auto' : '30px')};
   z-index: 10;
   color: var(--blue);
 
   @media (max-width: 1080px) {
+    bottom: ${props => (props.orientation === 'left' ? '0px' : '10px')};
     left: ${props => (props.orientation === 'left' ? '10px' : 'auto')};
-    right: ${props => (props.orientation === 'right' ? 'auto' : '10px')};
+    right: ${props => (props.orientation === 'left' ? 'auto' : '10px')};
   }
 
   @media (max-width: 768px) {
-    display: none;
+    display: ${props => (props.orientation === 'left' ? 'none' : 'block')};
   }
 `;
 
