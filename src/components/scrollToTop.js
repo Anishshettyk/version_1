@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Fixed } from '@components';
 import { FaArrowCircleUp } from 'react-icons/fa';
+import { window } from 'browser-monads';
 //https://medium.com/better-programming/create-a-scroll-to-top-arrow-using-react-hooks-18586890fedc
 
 const ScrollToTop = ({ home }) => {
