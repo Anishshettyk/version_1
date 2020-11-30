@@ -25,6 +25,7 @@ ${Fonts};
 
     //rgba colors
     --line-color-a:rgba(176,181,177,0.2);
+    --white-dark-a:rgba(136,146,176,0.4);
     
 
     //font-size
@@ -64,6 +65,7 @@ ${Fonts};
     //box-shadow
     --button-shadow:2px 2px 10px 5px var(--blue-inside);
     --button-shadow-click:4px 4px 5px 0px var(--blue-inside);
+    --social-shadow: 0px 2px 7px 1px var(--white-dark-a);
    
 }
 
@@ -180,6 +182,10 @@ p{
     color:var(--white);
     font-size:var(--fs-s);
     line-height:1.4;
+}
+span.dot__color{
+  color: var(--blue-hover);
+  font-size: var(--fs-xxl);
 }
 
 button {

@@ -102,7 +102,7 @@ const mixin = {
     &:hover,
     &:focus,
     &:active {
-      border-image: linear-gradient(to right, var(--red-dark) 0%, var(--yellow-dark) 100%);
+      border-image: linear-gradient(to right, var(--yellow-dark) 0%, var(--red-dark) 100%);
       border-image-slice: 1;
       color: var(--white);
       outline: none;

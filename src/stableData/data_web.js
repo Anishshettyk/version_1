@@ -55,4 +55,14 @@ module.exports = {
       name: 'Gatsby',
     },
   ],
+  contactInfo: [
+    {
+      name: 'Phone no',
+      value: '+91 6361949994',
+    },
+    {
+      name: 'Email ID',
+      value: 'anishshettyk@gmail.com',
+    },
+  ],
 };

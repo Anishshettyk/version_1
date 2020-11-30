@@ -1,135 +1,217 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { IconLogo, ReactIcon, GatsbyIcon, Icon } from '@components/icons';
-import { SocialMedia } from './../stableData/data_web';
-import FooterWaveSvg from './../stableData/svgs/waveFooter.svg';
-
+import { SocialMedia, Links, contactInfo } from './../stableData/data_web';
+import { RiArrowRightSLine } from 'react-icons/ri';
 const StyledFooter = styled.footer`
-  min-height: 20vh;
-  width: 100%;
-  overflow: hidden;
-  padding: 10px;
-  background-image: url(${FooterWaveSvg});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-color: var(--navy);
-`;
-const StyledRelativeFooter = styled.div`
-  width: 100%;
-  height: 100%;
-  ${({ theme }) => theme.mixin.flex_center}
-
-  @media (max-width:768px) {
-    ${({ theme }) => theme.mixin.flex_column}
+  background: var(--navy);
+  color: var(--white);
+  font-size: var(--fs-m);
+  h4 {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white-lightest);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--blue);
   }
 `;
-const SocialContainer = styled.div`
-  width: 50%;
-  ${({ theme }) => theme.mixin.flex_center}
-
-  ul {
-    position: relative;
-    ${({ theme }) => theme.mixin.flex_center}
-
-    li {
-      margin: 10px;
-
+const FooterTop = styled.section`
+  padding: 30px 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  @media (${({ theme }) => theme.bp.tabletL}) {
+    display: block;
+  }
+  .footer__me {
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      align-items: center;
+      padding-left: 25px;
+      svg {
+        width: 80px;
+        height: 80px;
+      }
+      h3 {
+        color: var(--white-lightest);
+        font-size: var(--fs-xxl);
+        line-height: 1;
+        letter-spacing: 1px;
+      }
+      @media (${({ theme }) => theme.bp.tabletL}) {
+        padding-left: 0;
+      }
+    }
+    p {
+      margin: 0 0 0 10%;
+      line-height: 24px;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .footer__links {
+    ul {
+      li {
+        border-bottom: 1px solid var(--white-dark-a);
+        padding: 10px 0;
+        &:first-child {
+          padding-top: 0;
+        }
+        .footer__links__icon {
+          color: var(--blue);
+          padding-right: 5px;
+          font-size: var(--fs-m);
+        }
+        a {
+          color: var(--white);
+          font-size: var(--fs-s);
+          &:hover {
+            color: var(--blue);
+          }
+        }
+      }
+    }
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      margin-bottom: 30px;
+    }
+  }
+  .footer__contact {
+    p {
+      line-height: 26px;
+      strong {
+        color: var(--blue);
+      }
+    }
+    .footer__contact_social-links {
+      margin-top: 4vh;
       a {
-        ${({ theme }) => theme.mixin.flex_center}
         padding: 10px;
-        background-color: transparent;
+        display: inline-block;
+        background: var(--black);
         border: 2px solid var(--white);
+        line-height: 1;
+        margin-right: 6px;
         border-radius: 50%;
-        transition: var(--transition);
-        &:hover,
-        &:focus {
-          transform: scale(1.05);
+        transition: 0.3s;
+        svg {
+          transition: 0.3s;
+          width: 20px;
+          height: 20px;
+        }
+        &:hover {
           border-color: var(--blue);
+          transform: scale(1.03);
           svg {
             transform: translateY(-2px);
           }
         }
-
-        svg {
-          transition: var(--transition);
-          width: 1.3rem;
-          height: 1.3rem;
-        }
       }
     }
   }
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `;
-const LogoContainer = styled.div`
-  ${({ theme }) => theme.mixin.flex_column}
-  width: 25%;
-
-  svg {
-    width: 100px;
-    height: 100px;
+const FooterBottom = styled.section`
+  padding: 10px 0;
+  border-top: 2px dashed var(--line-color-a);
+  text-align: center;
+  .footer__copyright {
+    color: var(--white-dark);
+    font-size: var(--fs-s);
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--fs-xxs);
+    }
   }
-  h3 {
-    font-family: var(--font-lob);
-    font-size: var(--fs-xl);
-    letter-spacing: 2px;
-  }
-  p {
-    font-size: var(--fs-m);
-    color: var(--white);
-    font-style: oblique;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
-const TechUsedContainer = styled.div`
-  ${({ theme }) => theme.mixin.flex_center}
-  width: 50%;
-  p {
-    color: var(--white);
-    letter-spacing: 1px;
-    font-weight: bolder;
-  }
-  svg {
-    margin: 5px;
-    width: 20px;
-    height: 20px;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 10px;
+  .footer__credits {
+    padding-top: 10px;
+    color: var(--white-lightest);
+    svg {
+      margin: 5px;
+      width: 25px;
+      height: 25px;
+    }
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: var(--fs-xs);
+    }
   }
 `;
 
 const Footer = () => (
   <StyledFooter>
-    <StyledRelativeFooter>
-      <SocialContainer>
-        <ul>
-          {SocialMedia &&
-            SocialMedia.map(({ name, url }, i) => (
-              <li key={i}>
-                <a href={url} aria-label={name}>
-                  <Icon name={name}></Icon>
-                </a>
-              </li>
-            ))}
-        </ul>
-      </SocialContainer>
-      <LogoContainer>
-        <IconLogo />
-        <h3>Anish shetty k</h3>
-        <p>&#169; 2020</p>
-      </LogoContainer>
-      <TechUsedContainer>
+    <FooterTop>
+      <div className="footer__me">
+        <div>
+          <IconLogo className="footer__me__logo" />
+          <h3>
+            Anish shetty k<span className="dot__color">.</span>
+          </h3>
+        </div>
         <p>
-          Built with <ReactIcon /> <GatsbyIcon /> and love.
+          I'm a software developer based in bangalore{' '}
+          <span role="img" aria-label="india-flag">
+            &#127470;&#127475;
+          </span>
         </p>
-      </TechUsedContainer>
-    </StyledRelativeFooter>
+      </div>
+      <div className="footer__links">
+        <h4>useful links</h4>
+        <ul>
+          {Links.map((link, i) => {
+            const { name, url } = link;
+            return (
+              <li key={i}>
+                <RiArrowRightSLine className="react-icon footer__links__icon" />
+                <Link to={url}>{name}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="footer__contact">
+        <h4>contact me</h4>
+        {contactInfo &&
+          contactInfo.map((contact, i) => {
+            const { name, value } = contact;
+            return (
+              <p key={i}>
+                <strong>{name} : </strong>
+                {value}
+                <br />
+              </p>
+            );
+          })}
+        <div className="footer__contact_social-links">
+          {SocialMedia &&
+            SocialMedia.map((social, i) => {
+              const { name, url } = social;
+              return (
+                <a key={i} href={url}>
+                  <Icon name={name} />
+                </a>
+              );
+            })}
+        </div>
+      </div>
+    </FooterTop>
+    <FooterBottom>
+      <div className="footer__copyright">
+        &copy; Copyright <strong>Anish shetty k</strong>. ALL RIGHTS RESERVED
+      </div>
+      <div className="footer__credits">
+        Built by <a href="https://version-1.vercel.app">anishshettyk</a> with <ReactIcon />{' '}
+        <GatsbyIcon /> and love.
+      </div>
+    </FooterBottom>
   </StyledFooter>
 );
 

@@ -195,7 +195,7 @@ const AboutMe = () => {
             <a href="/aboutme" className="aboutMe__button">
               more info
             </a>
-            <a href="/" className="aboutMe__button__red">
+            <a href="/resume.pdf" className="aboutMe__button__red">
               view resume
             </a>
           </div>
