@@ -45,8 +45,10 @@ const Layout = ({ children, location }) => {
             <Navbar home={home} />
             <Social home={home} />
             <ScrollToTop home={home} />
-            <div id="content">{children}</div>
-            <Footer />
+            <div id="content">
+              {children}
+              <Footer />
+            </div>
           </LayoutContainer>
         </ThemeProvider>
       </div>

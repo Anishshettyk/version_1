@@ -8,3 +8,4 @@ export { default as Loader } from './loader';
 export { default as Heading } from './heading';
 export { default as Hero } from './divisions/hero';
 export { default as AboutMe } from './divisions/aboutMe';
+export { default as Menu } from './menu';

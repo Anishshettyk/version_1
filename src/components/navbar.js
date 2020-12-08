@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { scrollDirectionUse } from '@hooks';
 import { IconLogo } from '@components/icons';
+import { Menu } from '@components';
 import { Links } from '../stableData/data_web';
 
 const HeaderStyled = styled.header`
@@ -193,6 +194,13 @@ const Navbar = ({ home }) => {
           )}
         </TransitionGroup>
       </StyledLinks>
+      <TransitionGroup component={null}>
+        {isMounted && (
+          <CSSTransition classNames="fadeClass" timeout={timeout}>
+            <Menu />
+          </CSSTransition>
+        )}
+      </TransitionGroup>
     </HeaderStyled>
   );
 };
