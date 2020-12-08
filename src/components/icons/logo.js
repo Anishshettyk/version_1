@@ -6,9 +6,9 @@ const IconLogo = () => (
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xlink="http://www.w3.org/1999/xlink"
-    width="100"
-    height="100"
-    viewBox="0, 0, 400,400">
+    width="100px"
+    height="100px"
+    viewBox="0, 0, 400, 400">
     <g id="svgg">
       <path
         id="path0"
