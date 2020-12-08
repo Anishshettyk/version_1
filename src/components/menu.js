@@ -92,7 +92,7 @@ const StyledSideBar = styled.div`
     top: 0;
     bottom: 0;
     right: 0;
-    height: calc(100vh +var(--nav-height));
+    height: calc(100vh + var(--nav-height));
     width: min(70vw, 400px);
     outline: none;
     background-color: var(--black);
