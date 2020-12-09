@@ -67,7 +67,7 @@ const YearInfoContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   padding-bottom: 10px;
-  border-bottom: 3px dashed var(--line-color-a);
+  border-bottom: 2px dashed var(--line-color-a);
 
   .year_info {
     ${({ theme }) => theme.mixin.flex_center};
@@ -102,10 +102,10 @@ const StyledText = styled.div`
 const TechKnownContainer = styled.div`
   padding: 10px;
   p {
-    font-weight: bold;
-    font-size: var(--fs-m);
-    text-decoration: underline;
-    letter-spacing: 1px;
+    font-weight: bolder;
+    color: var(--white);
+    font-size: var(--fs-s);
+    letter-spacing: 1.2px;
   }
   ul {
     margin-top: 2vh;
@@ -136,7 +136,7 @@ const TechKnownContainer = styled.div`
 const AboutMe = () => {
   const data = useStaticQuery(graphql`
     {
-      me: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "me_ori.jpg" }) {
+      me: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "me.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid_noBase64
