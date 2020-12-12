@@ -9,3 +9,4 @@ export { default as Heading } from './heading';
 export { default as Hero } from './divisions/hero';
 export { default as AboutMe } from './divisions/aboutMe';
 export { default as Menu } from './menu';
+export { default as Head } from './head';

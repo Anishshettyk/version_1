@@ -24,6 +24,7 @@ const FooterTop = styled.section`
   grid-gap: 20px;
   @media (${({ theme }) => theme.bp.tabletL}) {
     display: block;
+    padding: 15px 25px;
   }
   .footer__me {
     display: flex;
@@ -41,6 +42,9 @@ const FooterTop = styled.section`
         font-size: var(--fs-xxl);
         line-height: 1;
         letter-spacing: 1px;
+        @media (${({ theme }) => theme.bp.mobileL}) {
+          font-size: var(--fs-m);
+        }
       }
       @media (${({ theme }) => theme.bp.tabletL}) {
         padding-left: 0;

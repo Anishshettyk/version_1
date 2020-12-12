@@ -273,29 +273,18 @@ svg {
   width:var(--fs-xxl);
 }
 .scrollTopIcon{
-  color:var(--white-light);
+  color:var(--blue);
   transition: var(--transition);
   box-shadow: var(--button-shadow);
   border-radius: 50%;
-  animation:scrollTopIconAnimation 2s linear infinite;
+  cursor: pointer;
+  
   &:hover,&:focus{
     box-shadow: var(--button-shadow-click);
-    color: var(--white-lightest);
+    color:var(--blue-hover);
     transform: translateY(-3px);
   }
 }
-@keyframes scrollTopIconAnimation{
-  0%{
-    transform: translateY(0px);
-  }50%{
-    transform: translateY(-3px);
-  }
-  100%{
-    transform: translateY(0px);
-  }
-}
-
-
 
 #root {
     min-height: 100vh;

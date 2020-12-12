@@ -23,6 +23,50 @@ const AboutMePhotoContainer = styled.div`
   position: relative;
   max-width: 400px;
   transition: var(--transition);
+  .wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--blue);
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: var(--transition);
+    }
+    &:before {
+      border-left: 2px solid var(--blue);
+      border-bottom: 3px solid var(--blue);
+      border-right: 3px solid var(--blue);
+      top: 15px;
+      left: 15px;
+      z-index: -1;
+    }
+    &:after {
+      border-left: 2px solid var(--blue);
+      border-top: 3px solid var(--blue);
+      border-right: 3px solid var(--blue);
+      bottom: 15px;
+      left: 15px;
+      z-index: -1;
+    }
+    &:hover,
+    &:focus {
+      &:before {
+        top: 10px;
+        left: 10px;
+      }
+      &:after {
+        bottom: 10px;
+        left: 10px;
+      }
+    }
+  }
 
   .my_photo {
     position: relative;
@@ -162,7 +206,9 @@ const AboutMe = () => {
       <Heading data="About me" />
       <ContentContainer>
         <AboutMePhotoContainer>
-          <Img fluid={data.me.childImageSharp.fluid} alt="my photo" className="my_photo" />
+          <div className="wrapper">
+            <Img fluid={data.me.childImageSharp.fluid} alt="my photo" className="my_photo" />
+          </div>
         </AboutMePhotoContainer>
         <AboutMeContentContainer>
           <YearInfoContainer>
@@ -206,7 +252,11 @@ const AboutMe = () => {
             <a href="/aboutme" className="aboutMe__button">
               more info
             </a>
-            <a href="/resume.pdf" className="aboutMe__button__red">
+            <a
+              href="/resume.pdf"
+              className="aboutMe__button__red"
+              target="_blank"
+              rel="noopener noreferrer">
               view resume
             </a>
           </div>

@@ -14,4 +14,9 @@ module.exports = {
     viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
+  colors: {
+    black: '#1a1a2e',
+    blue: '#73efff',
+    darkNavy: '#020c1b',
+  },
 };

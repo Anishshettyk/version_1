@@ -186,7 +186,11 @@ const Navbar = ({ home }) => {
           {isMounted && (
             <CSSTransition classNames={classFadeDown} timeout={timeout}>
               <div style={{ transitionDelay: `${home ? Links.length * 100 : 0}ms` }}>
-                <a href="/resume.pdf" className="resumeButton">
+                <a
+                  href="/resume.pdf"
+                  className="resumeButton"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   Resume
                 </a>
               </div>
