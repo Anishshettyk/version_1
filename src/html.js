@@ -6,6 +6,18 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes} lang="en">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-06RLMBRQGT" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-06RLMBRQGT');
+        `,
+          }}
+        />
+
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
