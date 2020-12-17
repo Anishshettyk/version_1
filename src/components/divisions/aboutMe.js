@@ -99,7 +99,7 @@ const AboutMeContentContainer = styled.div`
         ${({ theme }) => theme.mixin.verySmallButtonRed}
       }
     }
-    a:nth-child(1) {
+    button:nth-child(1) {
       margin-right: 3vw;
     }
   }
@@ -249,16 +249,16 @@ const AboutMe = () => {
             <ul> {TechKnown && TechKnown.map(({ name }, i) => <li key={i}>{name}</li>)}</ul>
           </TechKnownContainer>
           <div className="aboutMe__buttonContainer">
-            <a href="/aboutme" className="aboutMe__button">
+            <button href="/aboutme" className="aboutMe__button">
               more info
-            </a>
-            <a
+            </button>
+            <button
               href="/resume.pdf"
               className="aboutMe__button__red"
               target="_blank"
               rel="noopener noreferrer">
               view resume
-            </a>
+            </button>
           </div>
         </AboutMeContentContainer>
       </ContentContainer>

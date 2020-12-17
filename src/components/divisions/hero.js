@@ -310,12 +310,12 @@ const Hero = () => {
           {isMounted && (
             <CSSTransition classNames="fadeup" timeout={LoaderDelay}>
               <div className="button-container">
-                <a href="/aboutme" className="hero-button">
+                <button href="/aboutme" className="hero-button">
                   more about me
-                </a>
-                <a href="/contact" className="hero-button">
+                </button>
+                <button href="/contact" className="hero-button">
                   contact me
-                </a>
+                </button>
               </div>
             </CSSTransition>
           )}

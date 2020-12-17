@@ -216,7 +216,11 @@ const Menu = () => {
         <body className={menuOpen ? 'blur' : ''} />
       </Helmet>
       <div ref={wrapperRef}>
-        <StyledHamburgerButton onClick={toggleMenu} ref={buttonRef} menuOpen={menuOpen}>
+        <StyledHamburgerButton
+          onClick={toggleMenu}
+          ref={buttonRef}
+          menuOpen={menuOpen}
+          aria-label="Open sidebar">
           <div className="ham__container">
             <div className="ham__container__inner"></div>
           </div>

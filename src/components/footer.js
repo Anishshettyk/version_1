@@ -37,7 +37,7 @@ const FooterTop = styled.section`
         width: 80px;
         height: 80px;
       }
-      h3 {
+      h1 {
         color: var(--white-lightest);
         font-size: var(--fs-xxl);
         line-height: 1;
@@ -156,9 +156,9 @@ const Footer = () => (
       <div className="footer__me">
         <div>
           <IconLogo className="footer__me__logo" />
-          <h3>
+          <h1>
             Anish shetty k<span className="dot__color">.</span>
-          </h3>
+          </h1>
         </div>
         <p>
           I'm a software developer based in bangalore{' '}

@@ -16,7 +16,7 @@ module.exports = {
   }),
   colors: {
     black: '#1a1a2e',
-    blue: '#73efff',
+    navy: '#16213e',
     darkNavy: '#020c1b',
   },
 };
