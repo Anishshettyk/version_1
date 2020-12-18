@@ -8,12 +8,14 @@ const StyledFooter = styled.footer`
   background: var(--navy);
   color: var(--white);
   font-size: var(--fs-m);
-  h4 {
+  h2 {
     position: relative;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: var(--fs-m);
     color: var(--white-lightest);
     padding-bottom: 12px;
+    letter-spacing: 1px;
     border-bottom: 2px solid var(--blue);
   }
 `;
@@ -168,7 +170,7 @@ const Footer = () => (
         </p>
       </div>
       <div className="footer__links">
-        <h4>useful links</h4>
+        <h2>useful links</h2>
         <ul>
           {Links.map((link, i) => {
             const { name, url } = link;
@@ -182,7 +184,7 @@ const Footer = () => (
         </ul>
       </div>
       <div className="footer__contact">
-        <h4>contact me</h4>
+        <h2>contact me</h2>
         {contactInfo &&
           contactInfo.map((contact, i) => {
             const { name, value } = contact;
@@ -199,7 +201,7 @@ const Footer = () => (
             SocialMedia.map((social, i) => {
               const { name, url } = social;
               return (
-                <a key={i} href={url}>
+                <a key={i} href={url} aria-label={name}>
                   <Icon name={name} />
                 </a>
               );
@@ -209,7 +211,7 @@ const Footer = () => (
     </FooterTop>
     <FooterBottom>
       <div className="footer__copyright">
-        &copy; Copyright <strong>Anish shetty k</strong>. ALL RIGHTS RESERVED
+        &copy;{new Date().getFullYear()} <strong>Anish shetty k</strong>. ALL RIGHTS RESERVED
       </div>
       <div className="footer__credits">
         Built by <a href="https://version-1.vercel.app">anishshettyk</a> with <ReactIcon />{' '}

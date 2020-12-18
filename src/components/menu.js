@@ -246,7 +246,7 @@ const Menu = () => {
               {SocialMedia &&
                 SocialMedia.map(({ name, url }, i) => (
                   <li key={i}>
-                    <a href={url}>
+                    <a href={url} aria-label={name}>
                       <Icon name={name} />
                     </a>
                   </li>
