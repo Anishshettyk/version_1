@@ -25,7 +25,7 @@ module.exports = {
         background_color: config.colors.black,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png',
+        icon: 'src/images/favicon.jpg',
         icon_options: {
           // For all the options available,
           // please see the section "Additional Resources" below.

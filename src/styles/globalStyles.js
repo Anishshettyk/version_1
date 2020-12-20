@@ -325,6 +325,51 @@ main{
     }
 }
 
+.wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--blue);
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: var(--transition);
+    }
+    &:before {
+      border-left: 2px solid var(--blue);
+      border-bottom: 3px solid var(--blue);
+      border-right: 3px solid var(--blue);
+      top: 15px;
+      left: 15px;
+      z-index: -1;
+    }
+    &:after {
+      border-left: 2px solid var(--blue);
+      border-top: 3px solid var(--blue);
+      border-right: 3px solid var(--blue);
+      bottom: 15px;
+      left: 15px;
+      z-index: -1;
+    }
+    &:hover,
+    &:focus {
+      &:before {
+        top: 10px;
+        left: 10px;
+      }
+      &:after {
+        bottom: 10px;
+        left: 10px;
+      }
+    }
+  }
+
 
 
 ${TransitionStyles}
