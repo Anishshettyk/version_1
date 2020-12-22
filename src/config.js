@@ -18,5 +18,6 @@ module.exports = {
     black: '#1a1a2e',
     navy: '#16213e',
     darkNavy: '#020c1b',
+    blue: '#73efff',
   },
 };

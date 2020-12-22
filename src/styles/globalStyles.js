@@ -27,6 +27,7 @@ ${Fonts};
     --line-color-a:rgba(176,181,177,0.2);
     --white-dark-a:rgba(136,146,176,0.4);
     --black-a:rgba(26,26,26,0.6);
+    --black-half:rgba(0, 0, 0, 0.5);
     
 
     //font-size
@@ -67,6 +68,7 @@ ${Fonts};
     --button-shadow:2px 2px 10px 5px var(--black-a);
     --button-shadow-click:0px 0px 5px 5px var(--black-a);
     --social-shadow: 0px 2px 7px 1px var(--white-dark-a);
+    --container-shadow:3px 3px 5px 1px var(--black-half);
 
     --ham-width:30px;
     --hb: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
@@ -145,6 +147,39 @@ h1,h2,h3,h4,h5,h6{
 .small-heading{
   margin: 0;
   font-size: clamp(40px, 8vw, 40px);
+}
+.side-heading{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px 0 40px;
+    width: 100%;
+    font-size: clamp(10px, 5vw, 25px);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      top: 50%;
+      width: 300px;
+      height: 1px;
+      margin-left: 10px;
+      background: linear-gradient(to left, var(--red-dark), var(--yellow-dark));
+      @media (max-width: 1080px) {
+        width: 200px;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      @media (max-width: 600px) {
+        margin-left: 10px;
+      }
+    }
+  span{
+    color:var(--blue-hover);
+  }
 }
 
 
