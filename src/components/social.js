@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { SocialMedia } from '../stableData/data_web';
 import { Icon } from '@components/icons';
 
-const StyledSocialList = styled.ul`
+const StyledSocialList = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -30,7 +30,8 @@ const StyledSocialList = styled.ul`
     opacity: 0.2;
   }
 
-  li {
+  a {
+    position: relative;
     margin: 5px;
     transition: var(--transition);
 
@@ -41,11 +42,8 @@ const StyledSocialList = styled.ul`
 
     &:hover,
     &:focus {
-      transform: translateY(-3px);
-      a {
-        transform: scale(1.05);
-        outline: none;
-      }
+      transform: scale(1.05) translateY(-3px);
+      outline: none;
     }
   }
 `;
@@ -56,9 +54,7 @@ const Social = ({ home }) => (
       {SocialMedia &&
         SocialMedia.map(({ name, url }, i) => (
           <a href={url} aria-label={name} key={i}>
-            <li>
-              <Icon name={name}></Icon>
-            </li>
+            <Icon name={name}></Icon>
           </a>
         ))}
     </StyledSocialList>

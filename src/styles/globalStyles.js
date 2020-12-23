@@ -152,20 +152,22 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     align-items: center;
     position: relative;
-    margin: 10px 0 40px;
+    margin: 10px 0 0 0;
+    padding-bottom:10px;
     width: 100%;
     font-size: clamp(10px, 5vw, 25px);
     font-family: var(--font-mono);
     white-space: nowrap;
   
-    &:after {
+    &:before {
       content: '';
       display: block;
-      position: relative;
-      top: 50%;
+      position: absolute;
+      bottom: 0;
+      left:0;
+      margin-top:10px;
       width: 300px;
-      height: 1px;
-      margin-left: 10px;
+      height: 2px;
       background: linear-gradient(to left, var(--red-dark), var(--yellow-dark));
       @media (max-width: 1080px) {
         width: 200px;
@@ -173,11 +175,9 @@ h1,h2,h3,h4,h5,h6{
       @media (max-width: 768px) {
         width: 100%;
       }
-      @media (max-width: 600px) {
-        margin-left: 10px;
-      }
     }
   span{
+    font-size:var(--fs--heavy-more);
     color:var(--blue-hover);
   }
 }
