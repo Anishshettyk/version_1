@@ -205,7 +205,7 @@ const AboutMe = () => {
             <ul> {TechKnown && TechKnown.map(({ name }, i) => <li key={i}>{name}</li>)}</ul>
           </TechKnownContainer>
           <div className="aboutMe__buttonContainer">
-            <a href="/aboutme" className="aboutMe__button">
+            <a href="/about" className="aboutMe__button">
               more info
             </a>
             <a

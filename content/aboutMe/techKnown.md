@@ -1,5 +1,4 @@
 ---
-title: Some of the technologies i have worked with,
 icons:
   - './images/Html.png'
   - './images/Css.png'
@@ -19,6 +18,4 @@ icons:
   - './images/Express.png'
   - './images/Mongodb.png'
   - './images/Vercel.png'
-
-showInProjects: true
 ---
