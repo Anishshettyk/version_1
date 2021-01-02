@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import h from './../../images/h.jpg';
+import contactBannerBg from './../../images/contactBannerBg.jpg';
 import sr from '@utils/sr';
 import { srConfig } from './../../config';
 
@@ -75,7 +75,7 @@ const ContactMeBanner = () => {
   }, []);
 
   return (
-    <StyledBanner background={h} ref={revealSection}>
+    <StyledBanner background={contactBannerBg} ref={revealSection}>
       <div className="contactMeBanner__headingContainer">
         <h2>
           I'm Available <br />
