@@ -8,7 +8,9 @@ import sr from '@utils/sr';
 import { TechKnown } from './../../stableData/data_web';
 import { RiCake2Line, RiUserLocationLine } from 'react-icons/ri';
 
-const AboutMeContainer = styled.section``;
+const AboutMeContainer = styled.section`
+  margin-bottom: 10vh;
+`;
 const ContentContainer = styled.div`
   margin-top: 6vh;
   display: grid;

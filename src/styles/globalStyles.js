@@ -28,6 +28,7 @@ ${Fonts};
     --white-dark-a:rgba(136,146,176,0.4);
     --black-a:rgba(26,26,26,0.6);
     --black-half:rgba(0, 0, 0, 0.5);
+    --blue-overlay:rgba(15,52,96,0.8);
     
 
     //font-size
