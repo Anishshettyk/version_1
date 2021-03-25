@@ -6,6 +6,7 @@ import { window } from 'browser-monads';
 import { Links, SocialMedia } from './../stableData/data_web';
 import { Icon } from '@components/icons';
 import { useOnClickOutside } from '@hooks';
+import { motion } from 'framer-motion';
 
 const StyledMenu = styled.div`
   display: none;
@@ -101,69 +102,73 @@ const StyledSideBar = styled.div`
     transition: var(--transition);
   }
   nav {
-    ${({ theme }) => theme.mixin.flex_between};
     width: 100%;
+    height: 100%;
+    ${({ theme }) => theme.mixin.flex_center};
     flex-direction: column;
     text-align: center;
     ul.nav-links {
-      width: 100%;
+      position: absolute;
+      top: 100px;
       li {
-        position: relative;
-        margin: 0 auto 20px;
-
         a {
-          position: relative;
-          color: var(--white-lightest);
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          width: 100%;
-          padding: 3px 20px 20px;
-          transition: var(--transition);
-          &:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            background-color: var(--red-dark);
-            transition: var(--transition);
-          }
-          &:hover,
-          &:focus,
-          &:active {
-            &:before {
-              width: 100%;
-              height: 2px;
+          margin: 20px;
+          display: flex;
+          align-items: center;
+          div {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            flex: 40px 0;
+            margin-right: 20px;
+            svg {
+              width: 20px;
+              color: white;
             }
-            color: var(--blue-hover);
           }
-        }
-
-        @media (max-width: 600px) {
-          margin: 0 auto 10px;
+          span {
+            border-radius: 15px;
+            width: 200px;
+            height: 30px;
+            flex: 1;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 1px;
+          }
         }
       }
     }
-    ul.nav-social {
-      margin-top: 5vh;
-      ${({ theme }) => theme.mixin.flex_between};
-      li {
-        margin: 3px;
-        a {
-          padding: 10px;
-          border-radius: 50%;
-          border: 2px solid var(--white);
-          svg {
-            width: 25px;
-            height: 25px;
-          }
-          &:hover,
-          &:focus,
-          &:active {
-            border-color: var(--blue-hover);
-            transform: translateY(-3px);
-            background-color: var(--navy);
+    .nav-social-container {
+      position: absolute;
+      top: 500px;
+      p {
+        margin-bottom: 20px;
+        color: var(--white-lightest);
+        font-weight: 300;
+        font-size: 18px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--white);
+      }
+      ul.nav-social {
+        ${({ theme }) => theme.mixin.flex_between};
+
+        li {
+          margin: 3px;
+          a {
+            padding: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            svg {
+              width: 25px;
+              height: 25px;
+            }
+            &:hover,
+            &:focus,
+            &:active {
+              border-color: var(--blue-hover);
+              transform: translateY(-3px);
+              background-color: var(--navy);
+            }
           }
         }
       }
@@ -171,6 +176,8 @@ const StyledSideBar = styled.div`
   }
 
   .resume-link {
+    position: absolute;
+    top: 380px;
     ${({ theme }) => theme.mixin.smallButton};
   }
 `;
@@ -210,6 +217,8 @@ const Menu = () => {
   const wrapperRef = useRef(null);
   useOnClickOutside(wrapperRef, () => setMenuOpen(false));
 
+  const colors = ['#fc5664', '#ffc371', '#00dea1', '#9C1AFF'];
+
   return (
     <StyledMenu>
       <Helmet>
@@ -231,27 +240,33 @@ const Menu = () => {
               <ul className="nav-links">
                 {Links &&
                   Links.map(({ name, url }, i) => (
-                    <li key={i}>
+                    <motion.li key={i} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                       <Link to={url} onClick={toggleMenu}>
-                        {name}
+                        <div style={{ border: `2px solid ${colors[i]}` }}>
+                          <Icon name={name} />
+                        </div>
+                        <span style={{ border: `2px solid ${colors[i]}` }}>{name}</span>
                       </Link>
-                    </li>
+                    </motion.li>
                   ))}
               </ul>
             )}
             <a href="/resume.pdf" className="resume-link" onClick={toggleMenu}>
               Resume
             </a>
-            <ul className="nav-social">
-              {SocialMedia &&
-                SocialMedia.map(({ name, url }, i) => (
-                  <li key={i}>
-                    <a href={url} aria-label={name}>
-                      <Icon name={name} />
-                    </a>
-                  </li>
-                ))}
-            </ul>
+            <div className="nav-social-container">
+              <p>Follow me at</p>
+              <ul className="nav-social">
+                {SocialMedia &&
+                  SocialMedia.map(({ name, url }, i) => (
+                    <li key={i}>
+                      <a href={url} aria-label={name}>
+                        <Icon name={name} />
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
           </nav>
         </StyledSideBar>
       </div>
