@@ -108,11 +108,9 @@ const StyledSideBar = styled.div`
     flex-direction: column;
     text-align: center;
     ul.nav-links {
-      position: absolute;
-      top: 100px;
       li {
         a {
-          margin: 20px;
+          margin: 10px;
           display: flex;
           align-items: center;
           div {
@@ -120,7 +118,7 @@ const StyledSideBar = styled.div`
             height: 40px;
             border-radius: 50%;
             flex: 40px 0;
-            margin-right: 20px;
+            margin-right: 10px;
             svg {
               width: 20px;
               color: white;
@@ -128,7 +126,7 @@ const StyledSideBar = styled.div`
           }
           span {
             border-radius: 15px;
-            width: 200px;
+            width: 150px;
             height: 30px;
             flex: 1;
             color: white;
@@ -139,15 +137,14 @@ const StyledSideBar = styled.div`
       }
     }
     .nav-social-container {
-      position: absolute;
-      top: 500px;
+      margin-top: 20px;
       p {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         color: var(--white-lightest);
         font-weight: 300;
-        font-size: 18px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid var(--white);
+        font-size: 14px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--white);
       }
       ul.nav-social {
         ${({ theme }) => theme.mixin.flex_between};
@@ -176,8 +173,7 @@ const StyledSideBar = styled.div`
   }
 
   .resume-link {
-    position: absolute;
-    top: 380px;
+    margin-top: 20px;
     ${({ theme }) => theme.mixin.smallButton};
   }
 `;
